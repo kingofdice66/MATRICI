@@ -32,6 +32,7 @@ void comuta(vec_2D& v, int n)
 	// Ne asiguram ca pivotul sa nu fie zero(0).
 	/* Daca pivotul este zero vom cauta sub pivot, pe coloana respectiva, pana gasim o valoare diferita de zero(0).
 	   Daca gasim o valoare diferita de zero(0) pe coloana respectiva atunci comutam liniile intre ele.
+	   Daca nu gasim o valoare diferita de zero...asta e.
     */
 	for (int i = 0; i < n - 1; ++i)
 	{
@@ -87,7 +88,7 @@ void zero_sub_pivoti(vec_2D& v, int n)
 			z = v[j][i - 1] / v[i - 1][i - 1];
 
 			for (int k = i - 1; k <= n; ++k)
-				v[j][k] = v[j][k] - k * v[j - 1][k];
+				v[j][k] = v[j][k] - z * v[j - 1][k];
 		}
 	}
 }
