@@ -25,8 +25,8 @@ void arata(const vec_2D& v, const vec_1D& X, int n)
 void comuta(vec_2D& v, int n)
 {
 	//*******************************************
-	std::vector<double> m(n + 1);
-	std::vector<std::vector<double>> temp(n, m);
+	std::vector<long double> m(n + 1);
+	std::vector<std::vector<long double>> temp(n, m);
 	//*******************************************
 
 	// Ne asiguram ca pivotul sa nu fie zero(0).
@@ -61,7 +61,7 @@ void comuta(vec_2D& v, int n)
 
 void rezolvare(vec_2D& v, vec_1D& X, int n)
 {
-	double sum = 0;
+	long double sum = 0;
 
 	X[n - 1] = v[n - 1][n] / v[n - 1][n - 1];
 
@@ -80,7 +80,7 @@ void rezolvare(vec_2D& v, vec_1D& X, int n)
 
 void zero_sub_pivoti(vec_2D& v, int n)
 {
-	double z;
+	long double z;
 
 	for (int i = 1; i <= n - 1; ++i)
 	{

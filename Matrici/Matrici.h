@@ -4,8 +4,8 @@
 #include <iostream>
 #include <vector>
 
-using vec_2D = std::vector<std::vector<double>>;
-using vec_1D = std::vector<double>;
+using vec_2D = std::vector<std::vector<long double>>;
+using vec_1D = std::vector<long double>;
 
 
 

@@ -8,11 +8,11 @@ int main()
 	std::cin >> n;
 
 	//***************************************
-	std::vector<double> m(n + 1);
-	std::vector<std::vector<double>> v(n, m);
+	std::vector<long double> m(n + 1);
+	std::vector<std::vector<long double>> v(n, m);
 	//***************************************
 
-	std::vector<double> X(n);
+	std::vector<long double> X(n);
 	
 
 
