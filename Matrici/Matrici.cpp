@@ -29,6 +29,10 @@ void comuta(vec_2D& v, int n)
 	std::vector<std::vector<double>> temp(n, m);
 	//*******************************************
 
+	// Ne asiguram ca pivotul sa nu fie zero(0).
+	/* Daca pivotul este zero vom cauta sub pivot, pe coloana respectiva, pana gasim o valoare diferita de zero(0).
+	   Daca gasim o valoare diferita de zero(0) pe coloana respectiva atunci comutam liniile intre ele.
+    */
 	for (int i = 0; i < n - 1; ++i)
 	{
 		if (v[i][i] == 0)
