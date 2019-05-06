@@ -27,10 +27,10 @@ int main()
 	
 	std::cout << "################################\n";
 	
-    //comuta(v, n);
-	zero_sub_pivoti(v, n);
+    comuta(v, n);
+	//zero_sub_pivoti(v, n);
 	//rezolvare(v, X, n);
-	//arata(v, X, n);
+	arata(v, X, n);
 
 	return 0;
 }

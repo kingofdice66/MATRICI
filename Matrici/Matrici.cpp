@@ -24,22 +24,35 @@ void arata(const vec_2D& v, const vec_1D& X, int n)
 
 void comuta(vec_2D& v, int n)
 {
+	//*******************************************
 	std::vector<double> m(n + 1);
 	std::vector<std::vector<double>> temp(n, m);
+	//*******************************************
 
-	for (int i = 0; i < n - 1; ++i)          // n-1 deoarece nu ne legam de ultimul pivot 
-	{                                        // daca in loc de n-1 avem n atunci rezulta buffer overflow
+	for (int i = 0; i < n - 1; ++i)
+	{
 		if (v[i][i] == 0)
 		{
-			for (int j = 0; j < n + 1; ++j)
+			for (int j = i + 1; j < n; ++j)
 			{
-				temp[i][j] = v[i][j];
-				v[i][j] = v[i + 1][j];
-				v[i + 1][j] = temp[i][j];
+				if (v[j][i] != 0)
+				{
+					for (int k = j; k < n; ++k)
+					{
+						for (int l = 0; l < n + 1; ++l)
+						{
+							temp[i][l] = v[i][l];
+							v[i][l] = v[k][l];
+							v[k][l] = temp[i][l];
+						}
+					}
+				}
 			}
 		}
 	}
+
 }
+
 
 void rezolvare(vec_2D& v, vec_1D& X, int n)
 {
