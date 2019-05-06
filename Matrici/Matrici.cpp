@@ -77,6 +77,7 @@ void rezolvare(vec_2D& v, vec_1D& X, int n)
 	}
 }
 
+
 void zero_sub_pivoti(vec_2D& v, int n)
 {
 	double z;
@@ -88,7 +89,7 @@ void zero_sub_pivoti(vec_2D& v, int n)
 			z = v[j][i - 1] / v[i - 1][i - 1];
 
 			for (int k = i - 1; k <= n; ++k)
-				v[j][k] = v[j][k] - z * v[j - 1][k];
+				v[j][k] = v[j][k] - z * v[i - 1][k];
 		}
 	}
 }
