@@ -30,9 +30,9 @@ void comuta(vec_2D& v, int n)
 	//*******************************************
 
 	// Ne asiguram ca pivotul sa nu fie zero(0).
-	/* Daca pivotul este zero vom cauta sub pivot, pe coloana respectiva, pana gasim o valoare diferita de zero(0).
+	/* Daca pivotul este zero(0) vom cauta sub pivot, pe coloana respectiva, pana gasim o valoare diferita de zero(0).
 	   Daca gasim o valoare diferita de zero(0) pe coloana respectiva atunci comutam liniile intre ele.
-	   Daca nu gasim o valoare diferita de zero...asta e.
+	   Daca nu gasim o valoare diferita de zero(0)...asta e.
     */
 	for (int i = 0; i < n - 1; ++i)
 	{
@@ -86,10 +86,38 @@ void zero_sub_pivoti(vec_2D& v, int n)
 	{
 		for (int j = i; j <= n - 1; ++j)
 		{
+			if (v[i - 1][i - 1] == 0)
+				verificare_comutare(v, n, i); // Verificam daca pe toata coloana gasim zero(0)
+			                            // dupa fiecare operatie algebrica
+
 			z = v[j][i - 1] / v[i - 1][i - 1];
 
 			for (int k = i - 1; k <= n; ++k)
 				v[j][k] = v[j][k] - z * v[i - 1][k];
+		}
+	}
+}
+
+void verificare_comutare(vec_2D& v, int n, int xi)
+{
+	//*******************************************
+	std::vector<long double> m(n + 1);
+	std::vector<std::vector<long double>> temp(n, m);
+	//*******************************************
+
+	int i = xi - 1;
+	int j = i;
+
+	for (; i < n; ++i)
+	{
+		if (v[i][j] != 0)
+		{
+			for (; j < n + 1; ++j)
+			{
+				temp[i][j] = v[i][j];
+				v[i][j] = v[i - 1][j];
+				v[i - 1][j] = temp[i][j];
+			}
 		}
 	}
 }

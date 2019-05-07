@@ -27,7 +27,7 @@ int main()
 	
 	std::cout << "################################\n";
 	
-   // comuta(v, n);
+    comuta(v, n);
 	zero_sub_pivoti(v, n); // efectuam calcul algebric pentru a avea zero sub pivoti
 	//rezolvare(v, X, n);
 	arata(v, X, n);

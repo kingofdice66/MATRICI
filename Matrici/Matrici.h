@@ -17,4 +17,6 @@ void rezolvare(vec_2D& v, vec_1D& X, int n);
 
 void zero_sub_pivoti(vec_2D& v, int n);
 
+void verificare_comutare(vec_2D& v, int n, int xi);
+
 #endif // ~MATRICI_H_
