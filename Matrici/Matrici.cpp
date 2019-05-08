@@ -9,7 +9,10 @@ void arata(const vec_2D& v, const vec_1D& X, int n)
 
 		for (int j = 0; j < n + 1; ++j)
 		{
-			std::cout << v[i][j] << " | ";
+			if (j + 1 == n + 1)
+				std::cout << " = " << v[i][j];
+			else
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " + ";
 		}
 	}
 
