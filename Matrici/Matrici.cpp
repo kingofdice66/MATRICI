@@ -27,6 +27,24 @@ void arata(const vec_2D& v, const vec_1D& X, int n)
 	*/
 }
 
+void arata_date_introduse(const vec_2D& v, int n)
+{
+	for (int i = 0; i < n; ++i)
+	{
+		std::cout << '\n';
+
+		for (int j = 0; j < n; ++j)
+		{
+			if (j == n - 1)
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " = " << v[i][j + 1] << '\n';
+			else
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " + ";
+		}
+	}
+
+	std::cout << '\n';
+}
+
 void comuta(vec_2D& v, int n)
 {
 	//*******************************************
@@ -83,7 +101,7 @@ void rezolvare(vec_2D& v, vec_1D& X, int n)
 }
 
 
-void zero_sub_pivoti(vec_2D& v, int n)
+bool zero_sub_pivoti(vec_2D& v, int n)
 {
 	long double z;
 
@@ -92,8 +110,10 @@ void zero_sub_pivoti(vec_2D& v, int n)
 		for (int j = i; j <= n - 1; ++j)
 		{
 			if (v[i - 1][i - 1] == 0)
-				verificare_comutare(v, n, i); // Verificam daca pe toata coloana gasim zero(0)
-			                            // dupa fiecare operatie algebrica
+			{
+				if (verificare_comutare(v, n, i) == true)  // Verificam daca pe toata coloana gasim zero(0)
+					return true;   	                    // dupa fiecare operatie algebrica
+			}
 
 			z = v[j][i - 1] / v[i - 1][i - 1];
 
@@ -103,7 +123,7 @@ void zero_sub_pivoti(vec_2D& v, int n)
 	}
 }
 
-void verificare_comutare(vec_2D& v, int n, int xi)
+bool verificare_comutare(vec_2D& v, int n, int xi)
 {
 	//*******************************************
 	std::vector<long double> m(n + 1);
@@ -112,11 +132,13 @@ void verificare_comutare(vec_2D& v, int n, int xi)
 
 	int i = xi - 1;
 	int j = i;
+	bool coloana_zero;  // verificam daca pe coloana sub pivot avem numai zero(0)
 
 	for (; i < n; ++i)
 	{
 		if (v[i][j] != 0)
 		{
+			coloana_zero = false;
 			for (; j < n + 1; ++j)
 			{
 				temp[i][j] = v[i][j];
@@ -124,5 +146,9 @@ void verificare_comutare(vec_2D& v, int n, int xi)
 				v[i - 1][j] = temp[i][j];
 			}
 		}
+		else
+			coloana_zero = true;
 	}
+
+	return coloana_zero;
 }
