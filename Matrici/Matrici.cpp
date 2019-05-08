@@ -3,18 +3,20 @@
 
 void arata(const vec_2D& v, const vec_1D& X, int n)
 {
+	
 	for (int i = 0; i < n; ++i)
 	{
 		std::cout << '\n';
 
-		for (int j = 0; j < n + 1; ++j)
+		for (int j = 0; j < n; ++j)
 		{
-			if (j + 1 == n + 1)
-				std::cout << " = " << v[i][j];
+			if (j == n - 1)
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " = " << v[i][j + 1] << '\n';
 			else
 				std::cout << "(" << v[i][j] << ")x" << j + 1 << " + ";
 		}
 	}
+
 
 	std::cout << '\n';
 	/*
