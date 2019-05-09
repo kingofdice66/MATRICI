@@ -13,6 +13,8 @@ void arata_solutiile(const vec_1D& X, int n)
 
 void arata_date_introduse(const vec_2D& v, int n)
 {
+	std::cout << "**SISTEMUL DE ECUATII INTRODUS**" << '\n';
+
 	for (int i = 0; i < n; ++i)
 	{
 		std::cout << '\n';
@@ -26,11 +28,11 @@ void arata_date_introduse(const vec_2D& v, int n)
 		}
 	}
 
-	std::cout << '\n';
 }
 
 void arata_din_nou(const vec_2D& v, int n)
 {
+	std::cout << "**ZERO SUB PIVOTI**" << '\n';
 
 	for (int i = 0; i < n; ++i)
 	{
@@ -91,7 +93,6 @@ void rezolvare(vec_2D& v, vec_1D& X, int n)
 
 	for (int i = n - 2; i >= 0; --i)
 	{
-		std::cout << "\n";
 		for (int j = i; j < n - 1; ++j)
 		{
 			sum = sum + v[i][j + 1] * X[j + 1];
