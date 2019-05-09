@@ -3,10 +3,10 @@
 
 void arata_solutiile(const vec_1D& X, int n)
 {
-
+	std::cout << "**SOLUTIILE ECUATIILOR**" << '\n';
 	for (int i = 0; i < n; ++i)
 	{
-		std::cout << "X[" << i << "] = " << X[i] << '\n';
+		std::cout << "x" << i + 1 << " = " << X[i] << '\n';
 	}
 	
 }
