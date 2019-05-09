@@ -9,9 +9,11 @@ using vec_1D = std::vector<long double>;
 
 
 
-void arata(const vec_2D& v, const vec_1D& X, int n);
+void arata_solutiile(const vec_1D& X, int n);
 
 void arata_date_introduse(const vec_2D& v, int n);
+
+void arata_din_nou(const vec_2D& v, int n);
 
 void comuta(vec_2D& v, int n);
 

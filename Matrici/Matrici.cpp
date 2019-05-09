@@ -1,30 +1,14 @@
 #include "Matrici.h"
 
 
-void arata(const vec_2D& v, const vec_1D& X, int n)
+void arata_solutiile(const vec_1D& X, int n)
 {
-	
-	for (int i = 0; i < n; ++i)
-	{
-		std::cout << '\n';
 
-		for (int j = 0; j < n; ++j)
-		{
-			if (j == n - 1)
-				std::cout << "(" << v[i][j] << ")x" << j + 1 << " = " << v[i][j + 1] << '\n';
-			else
-				std::cout << "(" << v[i][j] << ")x" << j + 1 << " + ";
-		}
-	}
-
-
-	std::cout << '\n';
-	/*
 	for (int i = 0; i < n; ++i)
 	{
 		std::cout << "X[" << i << "] = " << X[i] << '\n';
 	}
-	*/
+	
 }
 
 void arata_date_introduse(const vec_2D& v, int n)
@@ -43,6 +27,23 @@ void arata_date_introduse(const vec_2D& v, int n)
 	}
 
 	std::cout << '\n';
+}
+
+void arata_din_nou(const vec_2D& v, int n)
+{
+
+	for (int i = 0; i < n; ++i)
+	{
+		std::cout << '\n';
+
+		for (int j = 0; j < n; ++j)
+		{
+			if (j == n - 1)
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " = " << v[i][j + 1] << '\n';
+			else
+				std::cout << "(" << v[i][j] << ")x" << j + 1 << " + ";
+		}
+	}
 }
 
 void comuta(vec_2D& v, int n)

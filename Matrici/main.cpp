@@ -31,12 +31,18 @@ int main()
 	std::cout << "################################\n";
 
 	if (zero_sub_pivoti(v, n) == true) // efectuam calcul algebric pentru a avea zero sub pivoti
-	{                                  //rezolvare(v, X, n);
+	{                                  
 		std::cout << "Sistemul de " << n << " ecuatii cu " << n << " necunoscute"
 			<< " are o infinitate de solutii sau nici o solutie!\n";
 		return 0;
 	}
-	arata(v, X, n);
+
+	arata_din_nou(v, n); // aratam din nou dupa calculul algebric pentru a avea zero(0) sub pivoti
+	rezolvare(v, X, n);
+
+	std::cout << "################################\n";
+
+	arata_solutiile(X, n);
 
 	return 0;
 }
