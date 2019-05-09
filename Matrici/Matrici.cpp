@@ -123,6 +123,9 @@ bool zero_sub_pivoti(vec_2D& v, int n)
 				v[j][k] = v[j][k] - z * v[i - 1][k];
 		}
 	}
+	
+	if (v[n - 1][n - 1] == 0)
+		return true;
 }
 
 bool verificare_comutare(vec_2D& v, int n, int xi)
