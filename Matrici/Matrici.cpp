@@ -97,7 +97,7 @@ void rezolvare(vec_2D& v, vec_1D& X, int n)
 		{
 			sum = sum + v[i][j + 1] * X[j + 1];
 		}
-	    X[i] = v[i][n] / v[i][i] - sum;
+		X[i] = (v[i][n] - sum) / v[i][i];
 		sum = 0;
 	}
 }
