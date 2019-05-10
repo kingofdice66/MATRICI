@@ -1,0 +1,9 @@
+﻿  Matrici.cpp
+  main.cpp
+  Generating code
+D:\projects\VisualStudio_C++\Original\Matrici\Matrici\Matrici.cpp(200): warning C4715: 'matrici': not all control paths return a value
+  3 of 136 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    9 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Matrici.vcxproj -> D:\projects\VisualStudio_C++\Original\Matrici\x64\Release\Matrici.exe

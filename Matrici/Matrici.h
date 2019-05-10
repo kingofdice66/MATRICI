@@ -23,4 +23,6 @@ bool zero_sub_pivoti(vec_2D& v, int n);
 
 bool verificare_comutare(vec_2D& v, int n, int xi);
 
+int matrici(int n);
+
 #endif // ~MATRICI_H_

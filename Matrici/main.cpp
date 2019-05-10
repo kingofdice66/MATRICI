@@ -3,46 +3,23 @@
 
 int main()
 {
-	std::cout << "n = ";
 	int n;
-	std::cin >> n;
+	char ch;
 
-	//***************************************
-	std::vector<long double> m(n + 1);
-	std::vector<std::vector<long double>> v(n, m);
-	//***************************************
+	for (;;)
+	{
+		std::cout << "Doriti ca programul sa termine executia? Tastati D/d pentru Da sau N/n pentru Nu:";
+		std::cin >> ch;
+		ch = toupper(ch);
 
-	std::vector<long double> X(n);
-	
-	
-	for (int i = 0; i < n; ++i)
-		for (int j = 0; j < n + 1; ++j)
-		{
-			std::cout << "v[" << i << "][" << j << "] = ";
-			std::cin >> v[i][j];
-		}
-    
-	
-	std::cout << "################################\n";
+		if (ch == 'D')
+			break;
 
-    comuta(v, n);
-	arata_date_introduse(v, n);
+		std::cout << "Introduceti numarul de ecuatii si necunoscute: ";
+		std::cin >> n;
 
-	std::cout << "################################\n";
-
-	if (zero_sub_pivoti(v, n) == true) // efectuam calcul algebric pentru a avea zero sub pivoti
-	{                                  
-		std::cout << "Sistemul de " << n << " ecuatii cu " << n << " necunoscute"
-			<< " are o infinitate de solutii sau nici o solutie!\n";
-		return 0;
+		matrici(n);
 	}
-
-	arata_din_nou(v, n); // aratam din nou dupa calculul algebric pentru a avea zero(0) sub pivoti
-	rezolvare(v, X, n);
-
-	std::cout << "################################\n";
-
-	arata_solutiile(X, n);
 
 	return 0;
 }
