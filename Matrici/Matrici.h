@@ -2,6 +2,7 @@
 #define MATRICI_H_
 
 #include <iostream>
+#include <iomanip> // pentru a folosi "std::setprecision()" in "arata_solutiile()"
 #include <vector>
 
 using vec_2D = std::vector<std::vector<long double>>;
