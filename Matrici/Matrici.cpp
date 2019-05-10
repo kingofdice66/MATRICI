@@ -174,6 +174,20 @@ int matrici(int n)
 		{
 			std::cout << "v[" << i << "][" << j << "] = ";
 			std::cin >> v[i][j];
+
+			while (std::cin.fail())
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Se accepta numai numere!\n";
+				std::cout << "Introduceti numarul de ecuatii si necunoscute: ";
+				std::cin >> n;
+			}
+
+			while (std::cin.get() != '\n') // de exemplu daca se introduce n = 3aaa, cei trei de 'a' se ignora pana la \n si ramane numai 3
+			{
+
+			}
 		}
 
 
