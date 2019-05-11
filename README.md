@@ -2,5 +2,6 @@
 
 Intrati in folderul x64/Release si rulati "Matrici.exe"
 
+![](Imagini/Exemplu_Program_Matrici.PNG)
 
 
