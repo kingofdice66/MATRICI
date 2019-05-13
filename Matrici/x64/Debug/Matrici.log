@@ -1,6 +1,2 @@
-﻿  Matrici.cpp
-  main.cpp
-  Generating Code...
-D:\projects\VisualStudio_C++\Original\Matrici\Matrici\Matrici.cpp(131): warning C4715: 'zero_sub_pivoti': not all control paths return a value
-D:\projects\VisualStudio_C++\Original\Matrici\Matrici\Matrici.cpp(215): warning C4715: 'matrici': not all control paths return a value
-  Matrici.vcxproj -> D:\projects\VisualStudio_C++\Original\Matrici\x64\Debug\Matrici.exe
+﻿  main.cpp
+  Matrici.vcxproj -> D:\projects\VisualStudio_C++\Matrici\x64\Debug\Matrici.exe
